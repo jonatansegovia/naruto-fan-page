@@ -1,0 +1,53 @@
+$font: 'Rajdhani', sans-serif;
+$font-lg: 40px;
+$font-md: 30px;
+$font-sm: 20px;
+
+$primary: rgb(255, 174, 0);
+$secondary: snow;
+$tertiary: rgb(0, 0, 0);
+
+@mixin response($breakpoint) {
+  @if ($breakpoint == tablet) {
+    @media (max-width: 1138px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == mid) {
+    @media (max-width: 830px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == mobile) {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == min) {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+@mixin flexLayout(
+  $justify: center,
+  $align: flex-start,
+  $direction: row,
+  $gap: 0px
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin flexPosition($justCont: center, $alignIte: center) {
+  display: flex;
+  justify-content: $justCont;
+  align-items: $alignIte;
+}

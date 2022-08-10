@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font;
+  display: grid;
+  grid-template-rows: minmax(4rem, auto) minmax(50rem, auto) minmax(97px, auto);
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.modal {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 /-1;
+  background-color: rgba(0, 0, 0, 0.23);
+  transition: opacity 0.3s;
+}
+
+.left-nav {
+  position: fixed;
+  opacity: 0;
+  width: 50%;
+  height: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 /-1;
+  transition: opacity 0.2s;
+
+  @include response(mobile) {
+    background-color: darken($primary, 10%);
+
+    &__items {
+      width: 100%;
+      height: 100%;
+      @include flexLayout(center, center, column);
+
+      & > li {
+        font-size: $font-md;
+        color: $secondary;
+        transition: color 0.3s;
+
+        :hover {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 20;
+}

@@ -1,0 +1,42 @@
+.main-nav-history {
+  position: relative;
+  grid-area: main;
+  background: url('../img/Naruto-Backgrounds-1.jpg') center/cover no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: 'left center right';
+
+  &--container1 {
+    grid-area: left;
+    background: url('../img/naruto-vs-sasuke-left.jpg') center/cover no-repeat;
+  }
+  &--container2 {
+    grid-area: right;
+    background: url('../img/naruto-vs-sasuke-right.jpg') center/cover no-repeat;
+  }
+
+  &__container-text {
+    grid-area: center;
+    position: absolute;
+    top: 25%;
+    background-color: rgba(97, 97, 97, 0.685);
+    color: $secondary;
+    text-align: center;
+
+    @include response(tablet) {
+      font-size: 1rem;
+    }
+
+    @include response(mid) {
+      font-size: 0.8rem;
+    }
+
+    @include response(mobile) {
+      font-size: 0.7rem;
+    }
+
+    @include response(min) {
+      font-size: 0.6rem;
+    }
+  }
+}

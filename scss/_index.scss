@@ -1,0 +1,95 @@
+.header-home {
+  position: fixed;
+  width: 100%;
+  background-color: $primary;
+  grid-area: header;
+  @include flexLayout(space-between, center);
+
+  & .hamburguer {
+    display: none;
+
+    @include response(mobile) {
+      display: block;
+      cursor: pointer;
+      margin-right: 1rem;
+      width: 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+
+      & .hamburguer__item {
+        width: 45px;
+        height: 5px;
+        background-color: $secondary;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__logo {
+    width: 150px;
+    height: 70px;
+    margin-left: 10px;
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  &__nav {
+    & > ul {
+      display: flex;
+      flex-direction: row;
+      grid-gap: 10px;
+      margin-right: 2rem;
+    }
+
+    & > ul > li > a {
+      font-size: $font-sm;
+      font-weight: bold;
+      color: black;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+
+    .current {
+      color: $secondary;
+      border-bottom: 2px solid $secondary;
+    }
+
+    @include response(mobile) {
+      display: none;
+    }
+  }
+}
+
+.main-nav {
+  background: url('../img/Naruto-Backgrounds-1.jpg') center/cover no-repeat;
+  text-align: center;
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    color: $secondary;
+    background-color: rgba(0, 0, 0, 0.467);
+  }
+}
+
+.main-footer {
+  padding: 1rem 0;
+  background-color: $tertiary;
+  color: $secondary;
+  grid-area: footer;
+  text-align: center;
+
+  &__icons a {
+    color: $secondary;
+  }
+}
